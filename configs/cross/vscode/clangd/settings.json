@@ -1,0 +1,18 @@
+{
+    "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=.vscode",
+        // completion
+        "--header-insertion=never",
+        "--completion-style=bundled",
+        "--function-arg-placeholders=false",
+        // effective
+        "--pch-storage=memory",
+        "-j=16",
+        // coding
+        "--clang-tidy",
+        "--fallback-style=Google",
+        // misc
+        "--log=error"
+    ]
+}
