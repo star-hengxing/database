@@ -1,5 +1,7 @@
 # 记录每天看过的东西
 
+**[huntly](https://github.com/lcomplete/huntly)可能是我想要的信息管理工具，因为实现自动化是很有必要的，等这个项目成熟后，可能会切换到该工具**
+
 # 待读
 
 某一天有兴趣就看看
@@ -10,6 +12,72 @@
 4. [讲 C++ 并发的一系列文章](http://dengzuoheng.github.io/blog/)
 5. [Control-flow integrity](https://maskray.me/blog/2022-12-18-control-flow-integrity)
 6. [英语自学指南](https://bewaters.me/limxtop/2021/08/18/English-introduction/)
+
+## 03-20
+
+- [Leveraging Rust and the GPU to render user interfaces at 120 FPS](https://zed.dev/blog/videogame)
+
+教自绘 ui，值得一看
+
+## 03-02
+
+- [1. Kaleidoscope: Kaleidoscope Introduction and the Lexer](https://releases.llvm.org/15.0.0/docs/tutorial/MyFirstLanguageFrontend/LangImpl01.html)
+
+## 03-01
+
+- [计算机图形学简史](https://zhuanlan.zhihu.com/p/592013254)
+
+## 02-21
+
+- [ChatGPT 中文调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)
+- [The Premier Platform for Optimizing Workflow](https://flowgpt.com/)
+- [入行 14 年，我还是觉得编程很难](https://www.zlovezl.cn/articles/programming-is-still-hard-after-14-years/)
+- [LSP 到底错在哪里？](https://zhuanlan.zhihu.com/p/598690481)
+
+## 02-08
+
+- [galgame制作完全指南](https://zhuanlan.zhihu.com/p/590663542)
+
+## 02-07
+
+- [Input management techniques in large games](https://gamedev.stackexchange.com/questions/59582/input-management-techniques-in-large-games)
+
+## 02-06
+
+- [左还是右？哪个是单词正确的模样？- oooooohmygosh](https://www.bilibili.com/video/BV1iL4y1G7WB/)
+
+小科普，如何提高文本可读性
+
+## 02-04
+
+- [C++20的协程在事件驱动代码中的应用](https://zhuanlan.zhihu.com/p/372097429)
+
+省流：处理事件的模块很多是 i/o 操作，那就上协程
+
+## 02-03
+
+- [Rust 项目鉴赏: zellij 替代 screen, tmux 的终端工具](https://zhuanlan.zhihu.com/p/600682580)
+- [一次简单的 rust 爬虫开发技术调研](https://zhuanlan.zhihu.com/p/516033159)
+
+嗯，可以把以前用 cpp 写的爬虫用 rust 重写
+
+- [“有技无工”——目前大学工科教育的一些问题兼论如何学习SoC设计](https://zhuanlan.zhihu.com/p/598683182)
+- [Side Project 指南](https://sideproject.guide/)
+
+给你随便写的小工具商业化
+
+- [游戏中的Text Rendering(文本渲染)](https://zhuanlan.zhihu.com/p/143871184)
+
+## 02-02
+
+- [严格别名（Strict Aliasing）规则是什么，编译器为什么不做我想做的事？](https://zhuanlan.zhihu.com/p/595286568)
+- [玩转SIMD指令编程](https://zhuanlan.zhihu.com/p/591900754)
+
+比以前见过的 simd 文章讲的比较整洁= =
+
+- [Mixed C++ Monorepo Project Structure Development and Build Workflow](https://blog.galowicz.de/2023/01/23/mixed-cpp-monorepo-project/)
+
+还是换 xmake 吧.jpg
 
 ## 01-28
 
