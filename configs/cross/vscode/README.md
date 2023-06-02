@@ -1,3 +1,23 @@
+```json
+{
+    "window.zoomLevel": 2,
+
+    "window.openFoldersInNewWindow": "on",
+
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+
+    "terminal.external.windowsExec": "C:\\Users\\star\\scoop\\apps\\windows-terminal\\current\\WindowsTerminal.exe",
+
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on",
+
+    "editor.copyWithSyntaxHighlighting": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme Palenight High Contrast"
+}
+```
+
 # open folders in new window
 
 Settings -> open folders in new window
