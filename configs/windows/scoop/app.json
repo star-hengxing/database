@@ -4,39 +4,39 @@
             "Name": "DoveBoy_Apps",
             "Source": "https://github.com/DoveBoy/Apps",
             "Updated": {
-                "value": "\/Date(1683284889000)\/",
+                "value": "\/Date(1685628511000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年5月5日 19:08:09"
+                "DateTime": "2023年6月1日 22:08:31"
             },
-            "Manifests": 434
+            "Manifests": 440
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
             "Updated": {
-                "value": "\/Date(1683275164000)\/",
+                "value": "\/Date(1685680173000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年5月5日 16:26:04"
+                "DateTime": "2023年6月2日 12:29:33"
             },
-            "Manifests": 1863
+            "Manifests": 1865
         },
         {
             "Name": "games",
             "Source": "https://github.com/Calinou/scoop-games",
             "Updated": {
-                "value": "\/Date(1683275176000)\/",
+                "value": "\/Date(1685679937000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年5月5日 16:26:16"
+                "DateTime": "2023年6月2日 12:25:37"
             },
-            "Manifests": 271
+            "Manifests": 278
         },
         {
             "Name": "java",
             "Source": "https://github.com/ScoopInstaller/Java",
             "Updated": {
-                "value": "\/Date(1683274683000)\/",
+                "value": "\/Date(1685679470000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年5月5日 16:18:03"
+                "DateTime": "2023年6月2日 12:17:50"
             },
             "Manifests": 253
         },
@@ -44,29 +44,29 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
             "Updated": {
-                "value": "\/Date(1683275173000)\/",
+                "value": "\/Date(1685680056000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年5月5日 16:26:13"
+                "DateTime": "2023年6月2日 12:27:36"
             },
-            "Manifests": 1197
+            "Manifests": 1202
         },
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
             "Updated": {
-                "value": "\/Date(1683057289000)\/",
+                "value": "\/Date(1685082132000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年5月3日 3:54:49"
+                "DateTime": "2023年5月26日 14:22:12"
             },
-            "Manifests": 221
+            "Manifests": 278
         },
         {
             "Name": "sysinternals",
             "Source": "https://github.com/niheaven/scoop-sysinternals",
             "Updated": {
-                "value": "\/Date(1681819341000)\/",
+                "value": "\/Date(1684946095000)\/",
                 "DisplayHint": 2,
-                "DateTime": "2023年4月18日 20:02:21"
+                "DateTime": "2023年5月25日 0:34:55"
             },
             "Manifests": 75
         }
@@ -77,357 +77,378 @@
             "Source": "main",
             "Name": "7zip",
             "Version": "22.01",
-            "Updated": "\/Date(1658237308126)\/"
+            "Updated": "\/Date(1685633404103)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "aqtinstall",
-            "Version": "3.1.4",
-            "Updated": "\/Date(1680959518632)\/"
+            "Version": "3.1.6",
+            "Updated": "\/Date(1685633411116)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "aria2",
             "Version": "1.36.0-1",
-            "Updated": "\/Date(1642640559281)\/"
+            "Updated": "\/Date(1685633412240)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "bat",
             "Version": "0.23.0",
-            "Updated": "\/Date(1680084813072)\/"
+            "Updated": "\/Date(1685633571957)\/"
         },
         {
             "Info": "",
             "Source": "DoveBoy_Apps",
             "Name": "binggpt",
-            "Version": "0.3.3",
-            "Updated": "\/Date(1681121114372)\/"
+            "Version": "0.3.6",
+            "Updated": "\/Date(1685633922589)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "cheat-engine",
             "Version": "7.4",
-            "Updated": "\/Date(1672400937632)\/"
+            "Updated": "\/Date(1685633929904)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "cmake",
-            "Version": "3.26.3",
-            "Updated": "\/Date(1683290069179)\/"
+            "Version": "3.26.4",
+            "Updated": "\/Date(1685633961626)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "copyq",
             "Version": "7.0.0",
-            "Updated": "\/Date(1680587046717)\/"
+            "Updated": "\/Date(1685633966849)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "cpu-z",
-            "Version": "2.05",
-            "Updated": "\/Date(1679541516904)\/"
+            "Version": "2.06",
+            "Updated": "\/Date(1685633985765)\/"
         },
         {
             "Info": "",
             "Source": "<auto-generated>",
             "Name": "cuda",
             "Version": "11.8.0_522.06",
-            "Updated": "\/Date(1675325028888)\/"
+            "Updated": "\/Date(1685634106938)\/"
+        },
+        {
+            "Info": "",
+            "Source": "DoveBoy_Apps",
+            "Name": "dark",
+            "Version": "3.11.2",
+            "Updated": "\/Date(1685634327794)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "dufs",
             "Version": "0.33.0",
-            "Updated": "\/Date(1679196665871)\/"
+            "Updated": "\/Date(1685634108810)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "erdtree",
-            "Version": "1.8.1",
-            "Updated": "\/Date(1681914974850)\/"
+            "Version": "3.0.1",
+            "Updated": "\/Date(1685634110676)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "ffmpeg",
             "Version": "6.0",
-            "Updated": "\/Date(1678440400663)\/"
+            "Updated": "\/Date(1685634124409)\/"
         },
         {
             "Info": "",
             "Source": "nerd-fonts",
             "Name": "firacode",
             "Version": "6.2",
-            "Updated": "\/Date(1648907403734)\/"
-        },
-        {
-            "Info": "",
-            "Source": "extras",
-            "Name": "firefox",
-            "Version": "111.0.1",
-            "Updated": "\/Date(1680084850303)\/"
+            "Updated": "\/Date(1685634125947)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "flameshot",
             "Version": "12.1.0",
-            "Updated": "\/Date(1668321055174)\/"
+            "Updated": "\/Date(1685634146188)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "geekuninstaller",
             "Version": "1.5.1.162",
-            "Updated": "\/Date(1667024473494)\/"
+            "Updated": "\/Date(1685634148668)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "git",
-            "Version": "2.40.0.windows.1",
-            "Updated": "\/Date(1679196693698)\/"
+            "Version": "2.40.1.windows.1",
+            "Updated": "\/Date(1685633875542)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "github",
+            "Version": "3.2.3",
+            "Updated": "\/Date(1685689950094)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "glslang",
             "Version": "8.13.3559",
-            "Updated": "\/Date(1673511691609)\/"
+            "Updated": "\/Date(1685634151601)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "honeyview",
             "Version": "5.50",
-            "Updated": "\/Date(1680061888649)\/"
+            "Updated": "\/Date(1685634153726)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "hugo",
-            "Version": "0.111.3",
-            "Updated": "\/Date(1679196698027)\/"
+            "Version": "0.112.6",
+            "Updated": "\/Date(1685634160812)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "hugo-extended",
-            "Version": "0.111.3",
-            "Updated": "\/Date(1679196701404)\/"
+            "Version": "0.112.6",
+            "Updated": "\/Date(1685634163757)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "hyperfine",
             "Version": "1.16.1",
-            "Updated": "\/Date(1680084852379)\/"
+            "Updated": "\/Date(1685634165762)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "ispc",
-            "Version": "1.19.0",
-            "Updated": "\/Date(1679196710381)\/"
+            "Version": "1.20.0",
+            "Updated": "\/Date(1685634168949)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "jellyfin",
             "Version": "10.8.9",
-            "Updated": "\/Date(1675556749368)\/"
+            "Updated": "\/Date(1685634181647)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "keepassxc",
-            "Version": "2.7.4",
-            "Updated": "\/Date(1669385131496)\/"
+            "Version": "2.7.5",
+            "Updated": "\/Date(1685634224644)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "llvm",
-            "Version": "16.0.0",
-            "Updated": "\/Date(1679314290565)\/"
+            "Version": "16.0.4",
+            "Updated": "\/Date(1685634249980)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "magpie",
-            "Version": "0.10.1",
-            "Updated": "\/Date(1682951280116)\/"
+            "Version": "0.10.2",
+            "Updated": "\/Date(1685634252923)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "mingw",
-            "Version": "12.2.0-rt_v10-rev2",
-            "Updated": "\/Date(1679314350470)\/"
+            "Version": "13.1.0-rt_v11-rev1",
+            "Updated": "\/Date(1685634287637)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "msiafterburner",
-            "Version": "4.6.4",
-            "Updated": "\/Date(1674746275398)\/"
+            "Version": "4.6.5",
+            "Updated": "\/Date(1685634295134)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "nasm",
             "Version": "2.16.01",
-            "Updated": "\/Date(1682169609055)\/"
+            "Updated": "\/Date(1685634298193)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "ninja",
             "Version": "1.11.1",
-            "Updated": "\/Date(1678202387222)\/"
+            "Updated": "\/Date(1685634300022)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "nodejs",
-            "Version": "19.8.1",
-            "Updated": "\/Date(1679196725078)\/"
+            "Version": "20.2.0",
+            "Updated": "\/Date(1685634307466)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "nu",
-            "Version": "0.77.1",
-            "Updated": "\/Date(1679314492294)\/"
+            "Version": "0.80.0",
+            "Updated": "\/Date(1685634310084)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "obs-studio",
-            "Version": "29.0.2",
-            "Updated": "\/Date(1679196740272)\/"
+            "Version": "29.1.2",
+            "Updated": "\/Date(1685634320629)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "onecommander",
-            "Version": "3.37.1.0",
-            "Updated": "\/Date(1680587142156)\/"
+            "Version": "3.44.1.0",
+            "Updated": "\/Date(1685634325688)\/"
+        },
+        {
+            "Info": "",
+            "Source": "java",
+            "Name": "openjdk",
+            "Version": "20.0.1-9",
+            "Updated": "\/Date(1685689796425)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "powertoys",
-            "Version": "0.68.1",
-            "Updated": "\/Date(1679314641252)\/"
+            "Version": "0.70.0",
+            "Updated": "\/Date(1685634353565)\/"
         },
         {
             "Info": "",
             "Source": "sysinternals",
             "Name": "procmon",
             "Version": "3.93",
-            "Updated": "\/Date(1679196745017)\/"
+            "Updated": "\/Date(1685634355195)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "python",
-            "Version": "3.11.2",
-            "Updated": "\/Date(1679196773636)\/"
+            "Version": "3.11.3",
+            "Updated": "\/Date(1685634375485)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "renderdoc",
             "Version": "1.26",
-            "Updated": "\/Date(1681183982762)\/"
+            "Updated": "\/Date(1685634384445)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "sumatrapdf",
             "Version": "3.4.6",
-            "Updated": "\/Date(1669385200179)\/"
+            "Updated": "\/Date(1685634387092)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "syncthing",
-            "Version": "1.23.2",
-            "Updated": "\/Date(1679196776576)\/"
+            "Version": "1.23.4",
+            "Updated": "\/Date(1685634390022)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "telegram",
+            "Version": "4.8.1",
+            "Updated": "\/Date(1685634963790)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "tokei",
             "Version": "12.1.2",
-            "Updated": "\/Date(1661660257339)\/"
+            "Updated": "\/Date(1685634391725)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "trafficmonitor",
             "Version": "1.84.1",
-            "Updated": "\/Date(1669291456825)\/"
+            "Updated": "\/Date(1685634393385)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "typst",
-            "Version": "23-03-28",
-            "Updated": "\/Date(1680084862220)\/"
+            "Version": "0.4.0",
+            "Updated": "\/Date(1685634396834)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "vlc",
             "Version": "3.0.18",
-            "Updated": "\/Date(1670297547400)\/"
+            "Updated": "\/Date(1685634407176)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "vscode",
-            "Version": "1.78.0",
-            "Updated": "\/Date(1683292778561)\/"
+            "Version": "1.78.2",
+            "Updated": "\/Date(1685634414936)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "vulkan",
-            "Version": "1.3.243.0",
-            "Updated": "\/Date(1681177386335)\/"
+            "Version": "1.3.250.0",
+            "Updated": "\/Date(1685634422281)\/"
         },
         {
             "Info": "",
             "Source": "extras",
             "Name": "windows-terminal",
-            "Version": "1.16.10261.0",
-            "Updated": "\/Date(1675398591444)\/"
+            "Version": "1.17.11461.0",
+            "Updated": "\/Date(1685634424973)\/"
         },
         {
             "Info": "",
             "Source": "C:\\Users\\star\\scoop\\buckets\\main\\bucket\\xmake.json",
             "Name": "xmake",
-            "Version": "2.7.8",
-            "Updated": "\/Date(1680959670063)\/"
+            "Version": "2.7.9",
+            "Updated": "\/Date(1685634429262)\/"
         },
         {
             "Info": "",
             "Source": "main",
             "Name": "yt-dlp",
             "Version": "2023.03.04",
-            "Updated": "\/Date(1679196788656)\/"
+            "Updated": "\/Date(1685634432160)\/"
         }
     ]
 }
