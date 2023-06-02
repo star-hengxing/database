@@ -13,6 +13,14 @@
 5. [Control-flow integrity](https://maskray.me/blog/2022-12-18-control-flow-integrity)
 6. [英语自学指南](https://bewaters.me/limxtop/2021/08/18/English-introduction/)
 
+## 04-11
+
+- [glfw 和 glad 的区别](https://www.zhihu.com/question/344133077/answer/2735715316)
+
+## 04-05
+
+- [如何选择 WebGL 框架和引擎？](https://zhuanlan.zhihu.com/p/162878354)
+
 ## 03-20
 
 - [Leveraging Rust and the GPU to render user interfaces at 120 FPS](https://zed.dev/blog/videogame)
