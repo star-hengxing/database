@@ -1,0 +1,18 @@
+{
+	"for": {
+		"scope": "cpp",
+		"prefix": "forr",
+		"body": [
+			"for (auto i : range($1))\n{\n\t$2\n}"
+		],
+		"description": "for 0..n"
+	},
+	"namespace": {
+		"scope": "cpp",
+		"prefix": "NAME",
+		"body": [
+			"NAMESPACE_BEGIN($1)\n\n$3\n\nNAMESPACE_END($2)"
+		],
+		"description": "decalre namespace"
+	},
+}

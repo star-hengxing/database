@@ -16,7 +16,7 @@ fingerprint -> `SHA256:Pfry668oN6quTFtRxFBPNnm6+vgvTl5CM+405Rf7Cpg`
 
 ## cross
 
-- terminal -> [wezternm](cross/wezternm/wezternm.lua)
+
 
 ### vscode
 

@@ -1,7 +1,7 @@
 {
     "clangd.arguments": [
-        "--background-index",
         "--compile-commands-dir=.vscode",
+        "--background-index",
         // completion
         "--header-insertion=never",
         "--completion-style=bundled",
@@ -10,9 +10,17 @@
         "--pch-storage=memory",
         "-j=16",
         // coding
-        "--clang-tidy",
+        // "--clang-tidy",
         "--fallback-style=Google",
         // misc
         "--log=error"
-    ]
+    ],
+
+    "C_Cpp.codeAnalysis.runAutomatically": false,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.formatting": "disabled",
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.autocompleteAddParentheses": false,
+    "C_Cpp.autocomplete": "disabled",
+    "C_Cpp.errorSquiggles": "disabled",
 }
