@@ -8,3 +8,4 @@
 - [Ilum](https://github.com/star-hengxing/Ilum)
 - [SPHINXsys](hhttps://github.com/star-hengxing/SPHinXsys)
 - [Medial-IPC/libQGLViewer](https://github.com/star-hengxing/Medial-IPC)
+- [Geodesics_in_heat](https://github.com/star-hengxing/Geodesics_in_heat)
