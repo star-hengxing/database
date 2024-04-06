@@ -1,11 +1,14 @@
 ---
-title: "如何给 Xmake 打包"
+title: "如何写 Xmake 包描述"
 date: 2023-08-19
-lastmod: 2023-08-25
+lastmod: 2024-03-14
 draft: false
 tags:
     - C++
 ---
+
+无论你是否将包提交至官方包管理，本文都可以作为编写包描述的参考。
+
 
 先来展示个 cmake 包模板。
 
@@ -19,6 +22,16 @@ package("xxx")
              "https://github.com/xxx/yyy.git")
 
     add_versions("v1.0.0", "sha256")
+
+    add_defines("Hello")
+
+    add_cxflags("-DWorld")
+
+    if is_plat("linux") then
+        add_syslinks("pthread")
+    elseif is_plat("windows") then
+        add_syslinks("user32")
+    end
 
     add_deps("cmake", "ninja")
 
@@ -60,11 +73,11 @@ xmake l scripts/test.lua -vD --shallow xxx
 
 ## API 解读
 
-## 名字
+### 名字
 
 包名一律统一为**小写**，为了适配不同系统环境下，不同包管理管理的系统库查找，统一全平台。
 
-## 外部源
+### 外部源
 
 使用了 `add_extsources`， 会主动去查找 apt/pacman 等包管理管理的包。
 
@@ -87,6 +100,12 @@ local version = function (version) return tag[tostring(version)] end
 add_versions("2023.06", "sha256")
 ```
 
+如果一些包没有 release 包，可以选择使用 commit 日期作为版本号，sha256 替换为 commit hash。
+
+```lua
+add_versions("2024.01.01", "commit hash")
+```
+
 ### configs
 
 对应库的构建选项。如果一些内置选项支持不完善，比如 `shared`，就会打上 `readonly`，表示不可修改，只能使用默认配置。
@@ -96,6 +115,22 @@ add_configs("shared", {description = "Build shared library.", default = true, ty
 ```
 
 需要打上 `readonly` 的情况各有不同，比如库根本就不支持，或构建的时候有问题，打包者处理不了。
+
+### 需要继承的编译配置
+
+```lua
+add_defines("Hello")
+
+add_cxflags("-DWorld")
+
+if is_plat("linux") then
+    add_syslinks("pthread")
+elseif is_plat("windows") then
+    add_syslinks("user32")
+end
+```
+
+当 target add_package 后，这些配置都会被自动加上。
 
 ### on_install
 
@@ -113,7 +148,7 @@ xmake 包默认是不保留例子和测试的，所以需要打包者添加构�
 
 ### on_test
 
-平时用 `has_cxxfuncs` 系列既可以保持简洁，又可以检测到依赖的**静态库**/**动态库**有没有被正常链接上。
+平时用 `has_cxxfuncs` 系列既可以保持简洁，又可以检测到符号有没有链接上。
 
 ```lua
 on_test(function (package)
@@ -134,11 +169,79 @@ on_test(function (package)
 end)
 ```
 
+## 预编译二进制（需要本地查找的库）
+
+直接拷贝即可。
+
+```lua
+package("precompiled_binary")
+    add_urls("https://github.com/xxx/yyy/archive/refs/tags/$(version).7z")
+
+    add_versions("1.0", "sha256")
+
+    on_install(function (package)
+        os.cp("*.h", package:installdir("include"))
+        os.cp("*.lib", package:installdir("lib"))
+        os.trycp("*.so", package:installdir("lib"))
+        os.trycp("*.dll", package:installdir("bin"))
+    end)
+
+    on_test(function (package)
+        assert(package:has_cxxfuncs("xxx", {includes = "yyy.h"}))
+    end)
+```
+
+如果想引用本地的二进制。
+
+```lua
+package("precompiled_binary")
+    on_load(function (package)
+        package:set("installdir", path.join(os.scriptdir(), "precompiled_binary_dir"))
+    end)
+
+    on_fetch(function (package)
+        local result = {}
+        if is_plat("windows") then
+            result.linkdirs = package:installdir("lib-windows")
+            package:addenv("PATH", package:installdir("bin"))
+        elseif is_plat("linux") then
+            package:addenv("LD_LIBRARY_PATH", package:installdir("lib-linux"))
+            result.linkdirs = package:installdir("lib-linux")
+        elseif is_plat("macosx") then
+            package:addenv("DYLD_LIBRARY_PATH", package:installdir("lib-macos"))
+            result.linkdirs = package:installdir("lib-macos")
+        else
+            package:addenv("LD_LIBRARY_PATH", package:installdir("lib-linux"))
+            result.linkdirs = package:installdir("lib-linux")
+        end
+
+        result.links = {"xxx", "yyy"}
+        result.includedirs = package:installdir("include")
+        return result
+    end)
+
+    on_test(function (package)
+        assert(package:has_cxxfuncs("xxx", {includes = "yyy.h"}))
+    end)
+```
+
 ## 优化库的构建
 
 ### 本地测试
 
-因为要保持 xmake 包最小化依赖原则，实际上 cmake 包只使用系统默认的构建系统，而不是 ninja。但打包者依然可以在测试中使用 ninja 加速编译。
+因为要保持 xmake 包最小化依赖原则，实际上 cmake 包只使用系统默认的构建系统，而不是 ninja。但打包者依然可以在测试中使用 ninja 加速编译，我们可以使用 policy 来启用。
+
+```sh
+$ xmake g --policies=package.cmake_generator.ninja
+```
+
+或者在包描述写：
+
+```lua
+-- add_deps("ninja")
+
+import("package.tools.cmake").install(package, configs, {cmake_generator = "Nnija"})
+```
 
 ### 头文件库
 
