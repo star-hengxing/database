@@ -305,3 +305,186 @@ on_install(function (package)
     import("package.tools.xmake").install(package)
 end)
 ```
+
+## 实战
+
+这里拿一位新手打包写的包描述进行 code review。
+
+```lua
+package("reflex")
+    set_description("The reflex package")
+
+    add_urls("https://github.com/Genivia/RE-flex/archive/refs/tags/v$(version).tar.gz","https://github.com/Genivia/RE-flex.git")
+    add_versions("3.5.1", "e08ed24a6799a6976f6e32312be1ee059b4b6b55f8af3b433a3016d63250c0e4")
+    add_versions("4.3.0", "1658c1be9fa95bf948a657d75d2cef0df81b614bc6052284935774d4d8551d95")
+
+    add_includedirs("include")
+
+    on_load(function (package)
+        package:addenv("PATH", "bin")
+    end)
+
+    on_install(function (package)
+        io.writefile("xmake.lua",[[
+set_languages("cxx11")
+
+target("ReflexLib")
+    set_kind("shared")
+    add_includedirs("include")
+    add_headerfiles("include/reflex/*.h", {prefixdir = "reflex"})
+    add_files("lib/*.cpp")
+    add_files("unicode/*.cpp")
+    add_vectorexts("all")
+target_end()
+
+target("ReflexLibStatic")
+    set_kind("static")
+    add_includedirs("include")
+    add_headerfiles("include/reflex/*.h", {prefixdir = "reflex"})
+    add_files("lib/*.cpp")
+    add_files("unicode/*.cpp")
+    add_vectorexts("all")
+target_end()
+
+target("Reflex")
+    set_kind("binary")
+    add_includedirs("include")
+    add_files("src/*.cpp")
+    add_deps("ReflexLibStatic")
+    add_vectorexts("all")
+target_end()
+        ]])
+        local configs = {}
+        import("package.tools.xmake").install(package, configs)
+    end)
+
+    on_test(function (package)
+        assert(package:check_cxxsnippets({test = [[
+            #include <reflex/matcher.h>
+            void test()
+            {
+                reflex::Matcher matcher("\w+","114 514 1919 810");
+            }
+        ]]}, {configs = {languages = "cxx11"}}))
+    end)
+package_end()
+```
+
+一看开头，就知道没有用脚本（`xmake l scripts/new.lua Genivia/RE-flex`）生成模板。
+
+```lua
+add_urls("https://github.com/Genivia/RE-flex/archive/refs/tags/v$(version).tar.gz","https://github.com/Genivia/RE-flex.git")
+    add_versions("3.5.1", "e08ed24a6799a6976f6e32312be1ee059b4b6b55f8af3b433a3016d63250c0e4")
+    add_versions("4.3.0", "1658c1be9fa95bf948a657d75d2cef0df81b614bc6052284935774d4d8551d95")
+```
+
+- `add_urls` 正常情况下不需要加 `v`，放在 `add_versions("v4.3.0"` 就行。
+- 因为资源所限（没有 conan 那么多 ci 一次性测试多个版本），xmake-repo ci 只会测试最新版本，所以先提交 `add_versions("3.5.1"`，等 ci 通过后，再提交新的版本。
+
+```lua
+add_includedirs("include")
+
+on_load(function (package)
+    package:addenv("PATH", "bin")
+end)
+```
+
+- `add_includedirs("include")` 多余的，xmake 会默认添加 `package:installdir("include")`。
+- `package:addenv("PATH", "bin")` 放在 `on_install` 结尾就行，没必要用 `on_load`。
+
+```lua
+    on_install(function (package)
+        io.writefile("xmake.lua",[[
+set_languages("cxx11")
+
+target("ReflexLib")
+    set_kind("shared")
+    add_includedirs("include")
+    add_headerfiles("include/reflex/*.h", {prefixdir = "reflex"})
+    add_files("lib/*.cpp")
+    add_files("unicode/*.cpp")
+    add_vectorexts("all")
+target_end()
+
+target("ReflexLibStatic")
+    set_kind("static")
+    add_includedirs("include")
+    add_headerfiles("include/reflex/*.h", {prefixdir = "reflex"})
+    add_files("lib/*.cpp")
+    add_files("unicode/*.cpp")
+    add_vectorexts("all")
+target_end()
+
+target("Reflex")
+    set_kind("binary")
+    add_includedirs("include")
+    add_files("src/*.cpp")
+    add_deps("ReflexLibStatic")
+    add_vectorexts("all")
+target_end()
+        ]])
+        local configs = {}
+        import("package.tools.xmake").install(package, configs)
+    end)
+```
+
+这里有一个很大的问题，因为 xmake 自带包管理，所以我们根本没必要照抄 cmake 同时构建动态和静态库，所以这里应该只留一个 lib target。
+
+很多库没有考虑 Windows 上的动态库导出（开源社区日常嫌弃 Windows），所以我们要手动加上，一般情况下，都能正常导出符号（正常写代码不推荐用）。
+
+```lua
+if is_plat("windows") and is_kind("shared") then
+    add_rules("utils.symbols.export_all", {export_classes = true})
+end
+```
+
+另外还有些重复配置，可以移到全局域里，更优雅。
+
+改良后：
+
+```lua
+package("re-flex")
+    set_homepage("https://www.genivia.com/doc/reflex/html")
+    set_description("A high-performance C++ regex library and lexical analyzer generator with Unicode support. Extends Flex++ with Unicode support, indent/dedent anchors, lazy quantifiers, functions for lex and syntax error reporting and more. Seamlessly integrates with Bison and other parsers.")
+    set_license("BSD-3-Clause")
+
+    add_urls("https://github.com/Genivia/RE-flex/archive/refs/tags/$(version).tar.gz",
+             "https://github.com/Genivia/RE-flex.git")
+
+    add_versions("v4.3.0", "1658c1be9fa95bf948a657d75d2cef0df81b614bc6052284935774d4d8551d95")
+
+    on_install(function (package)
+        io.writefile("xmake.lua",[[
+            add_rules("mode.debug", "mode.release")
+            set_languages("cxx11")
+            add_includedirs("include")
+            set_encodings("utf-8")
+            add_vectorexts("all")
+
+            target("re-flex")
+                set_kind("$(kind)")
+                add_headerfiles("include/reflex/*.h", {prefixdir = "reflex"})
+                add_files("lib/*.cpp")
+                add_files("unicode/*.cpp")
+                if is_plat("windows") and is_kind("shared") then
+                    add_rules("utils.symbols.export_all", {export_classes = true})
+                end
+
+            target("reflex")
+                set_kind("binary")
+                add_files("src/*.cpp")
+                add_deps("re-flex")
+        ]])
+        import("package.tools.xmake").install(package, configs)
+        package:addenv("PATH", "bin")
+    end)
+
+    on_test(function (package)
+        assert(package:check_cxxsnippets({test = [[
+            #include <reflex/matcher.h>
+            void test() {
+                reflex::Matcher matcher("\w+","114 514 1919 810");
+            }
+        ]]}, {configs = {languages = "cxx11"}}))
+    end)
+```

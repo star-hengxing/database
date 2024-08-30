@@ -1,4 +1,10 @@
-# 漫谈 C/C++ 包管理
+---
+title: "漫谈 C/C++ 包管理"
+date: 2024-03-29
+draft: false
+tags:
+    - C++
+---
 
 在 r/cpp 一篇[帖子](https://www.reddit.com/r/cpp/comments/16ifo5e/which_package_manager_are_you_using)里，投票选择用什么包管理。出乎意料，但又情理之中：不用包管理的人占大多数。
 

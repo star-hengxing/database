@@ -81,6 +81,12 @@ xmake f -c
 xmake f --vs=2017 --vs_toolset=14.0 --vs_sdkver=10.0.15063.0
 ```
 
+如果想给单个 target 指定版本：
+
+```lua
+set_toolchains("msvc", {vs_toolset = "14.29.30133"})
+```
+
 ### IDE(vscode/vs)不显示头文件
 
 给 target 加上`add_headerfiles("**.h")`
