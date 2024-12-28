@@ -1,7 +1,7 @@
 ---
 title: "如何写 Xmake 包描述"
 date: 2023-08-19
-lastmod: 2024-03-14
+lastmod: 2024-12-14
 draft: false
 tags:
     - C++
@@ -121,7 +121,7 @@ add_configs("shared", {description = "Build shared library.", default = true, ty
 ```lua
 add_defines("Hello")
 
-add_cxflags("-DWorld")
+add_cxflags("/utf-8")
 
 if is_plat("linux") then
     add_syslinks("pthread")
@@ -230,6 +230,8 @@ package("precompiled_binary")
 ### 本地测试
 
 因为要保持 xmake 包最小化依赖原则，实际上 cmake 包只使用系统默认的构建系统，而不是 ninja。但打包者依然可以在测试中使用 ninja 加速编译，我们可以使用 policy 来启用。
+
+> xmake 3.0 版本将会默认使用 ninja 进行构建
 
 ```sh
 $ xmake g --policies=package.cmake_generator.ninja
